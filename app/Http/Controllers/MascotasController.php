@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mascotas;
 
 class MascotasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+   
     public function index()
     {
-        //
+        $mascotas = Mascotas::All();
+        return view('mascotas', compact('mascotas'));
     }
 
     /**
